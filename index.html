@@ -6,13 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!---- BOOTSTRAP.CSS---->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <!---MATERIAL ICONS--->
+    <link rel="stylesheet" href="./font/css/materialdesignicons.css">
     <title>Lista de contatos</title>
 </head>
 <body class="container">
     <section class="row">
         <div class="col-md-12 mt-5 card card-body">
+            
             <h1 class="display 2">Meus contatos</h1>
             <hr>
+            <div class="text-right mb-2">
+                <button class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#modal_cadastro">
+                    <i class="material-icons">+</i>
+                </button>
+            </div>
             <table class="table table-hover table-stripped">
                 <thead class="thead-dark">
                     <th>Nome</th>
@@ -21,11 +29,30 @@
                     <th>Ações</th>
                 </thead>
                 <tbody id="table-contatos">
-                    
+
                 </tbody>
             </table>
         </div>
     </section>
+    <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Modal body text goes here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <!--- JQUERY POPPER.JS E BOOTSTRAP.JS ---->
     <script src="./src/jquery.js"></script>
