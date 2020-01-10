@@ -7,7 +7,7 @@
     <!---- BOOTSTRAP.CSS---->
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
     <!---MATERIAL ICONS--->
-    <link rel="stylesheet" href="./font/css/materialdesignicons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Lista de contatos</title>
 </head>
 <body class="container">
@@ -17,10 +17,16 @@
             <h1 class="display 2">Meus contatos</h1>
             <hr>
             <div class="text-right mb-2">
-                <button class="btn btn-primary rounded-pill" data-toggle="modal" data-target="#modal_cadastro">
-                    <i class="material-icons">+</i>
+                <button class="btn btn-primary rounded-pill" data-toggle="modal"         data-target="#modal_cadastro">
+                    <i class="material-icons">add</i>
                 </button>
             </div>
+            <div class="row">
+            <div class="col-md-4">
+              
+              <input id="buscar" type="text" class="form-control " placeholder="Digite aqui sua busca">
+            </div>
+          </div>
             <table class="table table-hover table-stripped">
                 <thead class="thead-dark">
                     <th>Nome</th>
@@ -28,7 +34,7 @@
                     <th>E-mail</th>
                     <th>Ações</th>
                 </thead>
-                <tbody id="table-contatos">
+                <tbody id="tabela-contatos">
 
                 </tbody>
             </table>
