@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!---- BOOTSTRAP.CSS---->
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.css">
+    <title>Lista de contatos</title>
+</head>
+<body class="container">
+    <section class="row">
+        <div class="col-md-12 mt-5 card card-body">
+            <h1 class="display 2">Meus contatos</h1>
+            <hr>
+            <table class="table table-hover table-stripped">
+                <thead class="thead-dark">
+                    <th>Nome</th>
+                    <th>Telefone</th>
+                    <th>E-mail</th>
+                    <th>Ações</th>
+                </thead>
+                <tbody id="table-contatos">
+                    
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!--- JQUERY POPPER.JS E BOOTSTRAP.JS ---->
+    <script src="./src/jquery.js"></script>
+    <script src="./src/popper.js"></script>
+    <script src="./src/bootstrap.js"></script>
+    <script src="./src/app.js"></script>
+</body>
+</html>
