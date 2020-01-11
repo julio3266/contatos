@@ -3,14 +3,14 @@ function atualizarTabela() {
     let contatinhos = localStorage.getItem('contatinhos') || '[]';
     contatinhos = JSON.parse(contatinhos);
     $('#tabela-contatos').html('');
-    contatinhos.map((cadaContato)=>{
+    contatinhos.map((cadaContato, indice) => {
         $('#tabela-contatos').append(`
         <tr>
             <td>${cadaContato.nome}</td>
             <td>${cadaContato.email}</td>
             <td>${cadaContato.telefone}</td>
         <td>
-            <button class="btn btn-danger btn-sm">
+            <button data-id="${indice}" data-action="excluir" class="btn btn-danger btn-sm">
                 <i class="material-icons">clear</i>
             </button>
             <button class="btn btn-warning btn-sm">
@@ -45,4 +45,15 @@ $('#buscar').keyup(function(){
             $(this).text().indexOf(valor) > -1
         );
     });
+});
+
+$(document).on('click', '[data-action="excluir"]', function(){
+    let indice = $(this).attr('data-id');
+
+    let contatinhos = JSON.parse(
+        localStorage.getItem('contatinhos')
+    );
+    contatinhos.splice(indice, 1);
+    localStorage.setItem('contatinhos', JSON.stringify(contatinhos));
+    atualizarTabela();
 });
