@@ -1,7 +1,6 @@
 {
   "name": "contatos",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +11,14 @@
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "popper.js": "^1.16.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julio3266/contatos.git"
+  },
+  "bugs": {
+    "url": "https://github.com/julio3266/contatos/issues"
+  },
+  "homepage": "https://github.com/julio3266/contatos#readme",
+  "description": ""
 }
