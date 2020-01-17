@@ -46,7 +46,20 @@
             </div>
 
             <div id="editar" style="display: none;">
-              Editar
+                <p class="h3">Editar</p>
+                <form id="form_editar">
+                    <p class="alert alert-info">Preencha corretamente os dados</p>
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="editar_nome" class="form form-control form-control-md" required placeholder="digite seu nome">
+                    <label for="email">Email:</label>
+                    <input type="email" id="editar_email" class="form form-control form-control-md" required placeholder="seuemail@email.com">
+                    <label for="telefone">Telefone:</label>
+                    <input type="text" id="editar_telefone" class="form form-control form-control-md" required placeholder="(XX)XXXX-XXXX">
+                  
+                    <br>
+                    <button type="button" class="btn btn-primary">Enviar</button>
+                    <button type="button" id="editar_cancelar" class="btn btn-light">Cancelar</button>
+                  </form>
             </div>
         </div>
     </section>

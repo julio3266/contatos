@@ -75,4 +75,17 @@ $(document).on('click', '[data-action="confirmar-excluir"]', function(){
 $(document).on('click', '[data-action="editar"]', function(){
     $('#listagem').fadeOut();
     $('#editar').fadeIn();
+
+    let indice = $(this).attr('data-id');
+
+    let contatinhos  = JSON.parse(
+        localStorage.getItem('contatinhos')
+    );
+    $('#editar_nome').val(contatinhos[indice].nome);
+    $('#editar_email').val(contatinhos[indice].email);
+    $('#editar_telefone').val(contatinhos[indice].telefone);
 });
+$('#editar_cancelar').click(() => {
+    $('#listagem').fadeIn();
+    $('#editar').fadeOut();
+})
