@@ -10,6 +10,9 @@ function atualizarTabela() {
             <td>${cadaContato.email}</td>
             <td>${cadaContato.telefone}</td>
         <td>
+            <button data-action="confirmar-excluir" data-id="${indice}" class="d-none btn btn-outline-danger">
+                confirmar
+            </button>
             <button data-id="${indice}" data-action="excluir" class="btn btn-danger btn-sm">
                 <i class="material-icons">clear</i>
             </button>
@@ -47,7 +50,13 @@ $('#buscar').keyup(function(){
     });
 });
 
-$(document).on('click', '[data-action="excluir"]', function(){
+$(document).on('click', '[data-action="excluir"]', function() {
+    let indice = $(this).attr('data-id');
+
+    $(`button[data-id="${indice}"][data-action$="confirmar-excluir"]`).removeClass('d-none');
+    $(this).addClass('d-none')
+});
+$(document).on('click', '[data-action="confirmar-excluir"]', function(){
     let indice = $(this).attr('data-id');
 
     let contatinhos = JSON.parse(
