@@ -84,6 +84,21 @@ $(document).on('click', '[data-action="editar"]', function(){
     $('#editar_nome').val(contatinhos[indice].nome);
     $('#editar_email').val(contatinhos[indice].email);
     $('#editar_telefone').val(contatinhos[indice].telefone);
+
+    $('#form_editar').submit( function (evento) {
+        evento.preventDefault;
+        contatinhos[indice] = {
+            nome: $('#editar_nome').val(),
+            email: $('#editar_email').val(),
+            telefone: $('#editar_telefone').val()
+        };
+
+        localStorage.setItem('contatinhos', JSON.stringify(contatinhos));
+
+        atualizarTabela();
+        $('#listagem').fadeIn();
+        $('#editar').fadeOut();
+    });
 });
 $('#editar_cancelar').click(() => {
     $('#listagem').fadeIn();
