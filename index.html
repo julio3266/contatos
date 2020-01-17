@@ -12,34 +12,42 @@
 </head>
 <body class="container">
     <section class="row">
-        <div class="col-md-12 mt-5 card card-body">
-            
+        <div class="col-md-12 mt-5 card card-body">          
             <h1 class="display 2">Meus contatos</h1>
             <hr>
-            <div class="row">
-              <div class="col-md-3">
-                  <input id="buscar" class="form-control" placeholder="Buscar">
-              </div>
-              <div class="col-md-9">
-                  <div class="text-right">
-                    <button data-toggle="modal" data-target="#modal_cadastro" class="btn btn-primary rounded-pill mb-2">
-                      <i class="material-icons">add</i>
-                    </button>
-                  </div>
-              </div>
-            </div>
-    
-            <table class="table table-hover table-stripped">
-                <thead class="thead-dark">
-                    <th>Nome</th>
-                    <th>Telefone</th>
-                    <th>E-mail</th>
-                    <th>Ações</th>
-                </thead>
-                <tbody id="tabela-contatos">
 
-                </tbody>
-            </table>
+            
+            <div id="listagem">
+            
+              <div class="row">
+                <div class="col-md-3">
+                    <input id="buscar" class="form-control" placeholder="Buscar">
+                </div>
+                <div class="col-md-9">
+                    <div class="text-right">
+                      <button data-toggle="modal" data-target="#modal_cadastro" class="btn btn-primary rounded-pill mb-2">
+                        <i class="material-icons">add</i>
+                      </button>
+                    </div>
+                </div>
+              </div>
+      
+              <table class="table table-hover table-stripped">
+                  <thead class="thead-dark">
+                      <th>Nome</th>
+                      <th>Telefone</th>
+                      <th>E-mail</th>
+                      <th>Ações</th>
+                  </thead>
+                  <tbody id="tabela-contatos">
+
+                  </tbody>
+              </table>
+            </div>
+
+            <div id="editar" style="display: none;">
+              Editar
+            </div>
         </div>
     </section>
     <div class="modal fade" id="modal_cadastro" tabindex="-1" role="dialog">

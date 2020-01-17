@@ -16,7 +16,7 @@ function atualizarTabela() {
             <button data-id="${indice}" data-action="excluir" class="btn btn-danger btn-sm">
                 <i class="material-icons">clear</i>
             </button>
-            <button class="btn btn-warning btn-sm">
+            <button data-id="${indice}" data-action="editar" class="btn btn-warning btn-sm">
                 <i class="material-icons">edit</i>
             </button>
         </td>
@@ -56,6 +56,11 @@ $(document).on('click', '[data-action="excluir"]', function() {
     $(`button[data-id="${indice}"][data-action$="confirmar-excluir"]`).removeClass('d-none');
     $(this).addClass('d-none')
 });
+
+$(document).on('mouseout', '[data-action="confirmar-excluir"]', function() {
+    $('[data-action="confirmar-excluir"]').addClass('d-none');
+    $('[data-action="excluir"]').removeClass('d-none');
+})
 $(document).on('click', '[data-action="confirmar-excluir"]', function(){
     let indice = $(this).attr('data-id');
 
@@ -65,4 +70,9 @@ $(document).on('click', '[data-action="confirmar-excluir"]', function(){
     contatinhos.splice(indice, 1);
     localStorage.setItem('contatinhos', JSON.stringify(contatinhos));
     atualizarTabela();
+});
+
+$(document).on('click', '[data-action="editar"]', function(){
+    $('#listagem').fadeOut();
+    $('#editar').fadeIn();
 });
